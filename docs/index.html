@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GM Corp.</title>
+<meta name="description" content="GM Corp.: игры, соцсети и поддержка.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+<style>
+  /* Шрифт ULTRAKILL с русскими буквами: файл ultrafont.ttf лежит рядом с index.html */
+  @font-face {
+    font-family: "UltraFont";
+    src: url("ultrafont.ttf") format("truetype");
+    font-display: swap;
+  }
+  :root {
+    --bg: #151617;
+    --panel: #212326;
+    --line: #3b3e42;
+    --text: #e8eaed;
+    --muted: #9aa0a6;
+    --cyan: #00b4ff;
+    --font: "UltraFont", "VT323", "Courier New", monospace;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 22px;
+    line-height: 1.35;
+    padding: 28px 18px 48px;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+
+  h1 {
+    font-weight: 400;
+    font-size: clamp(34px, 9vw, 54px);
+    line-height: 1.1;
+    margin: 12px 0 44px;
+    min-height: 2.3em;
+    border-left: 8px solid var(--cyan);
+    padding-left: 16px;
+  }
+  h1.typing::after {
+    content: "";
+    display: inline-block;
+    width: .45em; height: .8em;
+    margin-left: 6px;
+    background: var(--cyan);
+    animation: blink .8s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  h2 {
+    font-weight: 400;
+    font-size: 30px;
+    margin: 40px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    border-bottom: 3px solid var(--line);
+    padding-bottom: 8px;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 22px;
+    margin: 18px 0 10px;
+    color: var(--muted);
+  }
+
+  .row { display: flex; gap: 10px; align-items: stretch; margin-bottom: 12px; }
+  .btn {
+    flex: 1;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    text-decoration: none;
+    color: var(--text);
+    background: var(--panel);
+    border: 3px solid var(--line);
+    border-left: 8px solid var(--cyan);
+    padding: 14px 16px;
+    font-size: 26px;
+    transition: background .12s, color .12s, border-color .12s;
+  }
+  .btn .hint { color: var(--muted); font-size: 18px; text-align: right; overflow-wrap: anywhere; }
+  .btn:hover, .btn:focus-visible { background: var(--cyan); border-color: var(--cyan); color: #06121a; outline: none; }
+  .btn:hover .hint, .btn:focus-visible .hint { color: #06121a; }
+  .btn.main { font-size: 34px; padding: 22px 18px; }
+
+  .badge {
+    width: 124px; flex: none;
+    display: flex; flex-direction: column; justify-content: center; gap: 4px;
+    text-decoration: none;
+    color: var(--cyan);
+    border: 3px solid var(--cyan);
+    background: #0a1a24;
+    padding: 6px 8px;
+    font-size: 17px; line-height: 1.05;
+    text-align: center;
+  }
+  .badge i {
+    display: block; width: 0; height: 0; margin: 0 auto;
+    border-left: 9px solid transparent; border-right: 9px solid transparent;
+    border-top: 11px solid var(--cyan);
+  }
+  .badge:hover, .badge:focus-visible { background: var(--cyan); color: #06121a; outline: none; }
+  .badge:hover i, .badge:focus-visible i { border-top-color: #06121a; }
+
+  .note { font-size: 18px; color: var(--muted); margin: -2px 0 12px; }
+  .note a { color: var(--cyan); }
+
+  footer { margin-top: 56px; padding-top: 14px; border-top: 3px solid var(--line); color: var(--muted); font-size: 18px; }
+
+  @media (max-width: 420px) {
+    .badge { width: 104px; font-size: 15px; }
+    .btn { font-size: 22px; padding: 12px; }
+    .btn.main { font-size: 28px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    h1.typing::after { animation: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1 id="welcome">Добро пожаловать на сайт GM Corp.</h1>
+
+  <h2>Проекты</h2>
+
+  <h3>Главный проект</h3>
+  <div class="row">
+    <a class="btn main" href="https://www.rustore.ru/catalog/app/com.gmmod.goodmen">GM's Mod</a>
+    <a class="badge" href="https://www.rustore.ru/catalog/app/com.gmmod.goodmen"><i></i>Доступно к скачиванию в RuStore</a>
+  </div>
+
+  <h3>Остальное</h3>
+  <div class="row">
+    <a class="btn" href="https://www.rustore.ru/catalog/app/com.winsim.goodmen">Windows 10 Simulator</a>
+    <a class="badge" href="https://www.rustore.ru/catalog/app/com.winsim.goodmen"><i></i>Доступно к скачиванию в RuStore</a>
+  </div>
+  <div class="row">
+    <a class="btn" href="https://www.rustore.ru/catalog/app/com.gcraft.goodmen">GCraft</a>
+    <a class="badge" href="https://www.rustore.ru/catalog/app/com.gcraft.goodmen"><i></i>Доступно к скачиванию в RuStore</a>
+  </div>
+
+  <h2>Мои соцсети</h2>
+  <a class="btn" style="margin-bottom:12px" href="tg://resolve?domain=Gmcorp_Official">Telegram <span class="hint">t.me/Gmcorp_Official</span></a>
+  <a class="btn" style="margin-bottom:12px" href="https://www.tiktok.com/@gem0eroy">TikTok <span class="hint">@gem0eroy</span></a>
+  <a class="btn" style="margin-bottom:12px" href="https://www.twitch.tv/gem0rr0y">Twitch <span class="hint">gem0rr0y</span></a>
+  <a class="btn" style="margin-bottom:12px" href="https://www.youtube.com/@GMsMod">YouTube <span class="hint">@GMsMod</span></a>
+  <a class="btn" style="margin-bottom:12px" href="mailto:gmmod.support@gmail.com">Поддержка <span class="hint">gmmod.support@gmail.com</span></a>
+
+  <footer>© 2026 GM(GEMORROY). Все права защищены.</footer>
+</main>
+
+<script>
+  // Надпись "вырисовывается" буква за буквой. Без JS или при reduced motion показывается сразу.
+  (function () {
+    var el = document.getElementById("welcome");
+    var full = el.textContent;
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    el.setAttribute("aria-label", full);
+    el.textContent = "";
+    el.classList.add("typing");
+    var i = 0;
+    var timer = setInterval(function () {
+      el.textContent = full.slice(0, ++i);
+      if (i >= full.length) { clearInterval(timer); setTimeout(function () { el.classList.remove("typing"); }, 1800); }
+    }, 55);
+  })();
+</script>
+</body>
+</html>
